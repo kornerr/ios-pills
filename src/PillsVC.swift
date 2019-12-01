@@ -18,12 +18,16 @@ class PillsVC: UIViewController
         self.setupImages()
         self.setupSelection()
         self.setupDots()
+        self.setupName()
+        self.setupDescription()
         //self.setupRefresh()
 
         // Layout.
         self.lastView = startLastView(forVC: self)
         self.layoutPagerView()
         self.layoutDots()
+        self.layoutName()
+        self.layoutDescription()
     }
 
     override func viewDidLayoutSubviews()
@@ -82,8 +86,8 @@ class PillsVC: UIViewController
     private func layoutPagerViewItems()
     {
         let size = self.pagerView.frame.size
-        let height = size.height / 1.2
-        let width = size.width / 1.7
+        let height = size.height / 1.1
+        let width = size.width / 1.6
         self.pagerView.itemSize = CGSize(width: width, height: height)
     }
     
@@ -157,7 +161,7 @@ class PillsVC: UIViewController
 
     // MARK: - SELECTION
 
-    var selectedItemId: Int?
+    var selectedItemId = 0
     {
         didSet
         {
@@ -182,9 +186,7 @@ class PillsVC: UIViewController
     func pagerViewDidScroll(_ pagerView: FSPagerView)
     {
         // Skip setting the same value.
-        if
-            let id = self.selectedItemId,
-            id == self.pagerView.currentIndex
+        if self.selectedItemId == self.pagerView.currentIndex
         {
             return
         }
@@ -216,9 +218,79 @@ class PillsVC: UIViewController
     
     private func layoutDots()
     {
-        self.pageControl.topAnchor == self.lastView.bottomAnchor + 8
+        self.pageControl.topAnchor == self.lastView.bottomAnchor
         self.pageControl.centerXAnchor == self.view.centerXAnchor
         self.lastView = self.pageControl
+    }
+
+    // MARK: - NAME
+
+    private var nameLabel: UILabel!
+    
+    private func setupName()
+    {
+        self.nameLabel = UILabel()
+        self.view.addSubview(self.nameLabel)
+        self.nameLabel.textAlignment = .center
+        self.nameLabel.lineBreakMode = .byWordWrapping
+        self.nameLabel.numberOfLines = 0
+        self.nameLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+    
+        self.itemsChanged.subscribe { [weak self] in
+            self?.updateName()
+        }
+        self.selectedItemIdChanged.subscribe { [weak self] in
+            self?.updateName()
+        }
+    }
+    
+    private func layoutName()
+    {
+        self.nameLabel.topAnchor == self.lastView.bottomAnchor + 16
+        self.nameLabel.leftAnchor == self.view.leftAnchor + 16
+        self.nameLabel.rightAnchor == self.view.rightAnchor - 16
+        self.lastView = self.nameLabel
+    }
+    
+    private func updateName()
+    {
+        let name = self.items[self.selectedItemId].name
+        self.nameLabel?.text = name
+    }
+
+    // MARK: - DESCRIPTION
+
+    private var descLabel: UILabel!
+    
+    private func setupDescription()
+    {
+        self.descLabel = UILabel()
+        self.view.addSubview(self.descLabel)
+        self.descLabel.textAlignment = .center
+        self.descLabel.lineBreakMode = .byWordWrapping
+        self.descLabel.numberOfLines = 0
+        self.descLabel.textColor = .lightGray
+    
+        self.itemsChanged.subscribe { [weak self] in
+            self?.updateDescription()
+        }
+        self.selectedItemIdChanged.subscribe { [weak self] in
+            self?.updateDescription()
+        }
+    }
+    
+    private func layoutDescription()
+    {
+        self.descLabel.topAnchor == self.lastView.bottomAnchor + 16
+        self.descLabel.leftAnchor == self.view.leftAnchor + 16
+        self.descLabel.rightAnchor == self.view.rightAnchor - 16
+        self.lastView = self.descLabel
+    }
+    
+    private func updateDescription()
+    {
+        let desc = self.items[self.selectedItemId].desc
+        self.descLabel?.text = desc
     }
 
     // MARK: - ADDITION
