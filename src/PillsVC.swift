@@ -18,16 +18,14 @@ class PillsVC: UIViewController
         self.setupImages()
         self.setupSelection()
         self.setupDots()
-        self.setupName()
-        self.setupDescription()
+        self.setupNameAndDescription()
         //self.setupRefresh()
 
         // Layout.
         self.lastView = startLastView(forVC: self)
         self.layoutPagerView()
         self.layoutDots()
-        self.layoutName()
-        self.layoutDescription()
+        self.layoutNameAndDescription()
     }
 
     override func viewDidLayoutSubviews()
@@ -223,74 +221,66 @@ class PillsVC: UIViewController
         self.lastView = self.pageControl
     }
 
-    // MARK: - NAME
+    // MARK: - NAME AND DESCRIPTION
 
     private var nameLabel: UILabel!
+    private var descLabel: UILabel!
     
-    private func setupName()
+    private func setupNameAndDescription()
     {
         self.nameLabel = UILabel()
         self.view.addSubview(self.nameLabel)
-        self.nameLabel.textAlignment = .center
         self.nameLabel.lineBreakMode = .byWordWrapping
         self.nameLabel.numberOfLines = 0
-        self.nameLabel.font = UIFont.preferredFont(forTextStyle: .title1)
-    
-        self.itemsChanged.subscribe { [weak self] in
-            self?.updateName()
-        }
-        self.selectedItemIdChanged.subscribe { [weak self] in
-            self?.updateName()
-        }
-    }
-    
-    private func layoutName()
-    {
-        self.nameLabel.topAnchor == self.lastView.bottomAnchor + 16
-        self.nameLabel.leftAnchor == self.view.leftAnchor + 16
-        self.nameLabel.rightAnchor == self.view.rightAnchor - 16
-        self.lastView = self.nameLabel
-    }
-    
-    private func updateName()
-    {
-        let name = self.items[self.selectedItemId].name
-        self.nameLabel?.text = name
-    }
+        self.nameLabel.font =
+            UIFont.systemFont(ofSize: 23, weight: UIFont.Weight.bold)
 
-    // MARK: - DESCRIPTION
-
-    private var descLabel: UILabel!
-    
-    private func setupDescription()
-    {
         self.descLabel = UILabel()
         self.view.addSubview(self.descLabel)
-        self.descLabel.textAlignment = .center
         self.descLabel.lineBreakMode = .byWordWrapping
         self.descLabel.numberOfLines = 0
         self.descLabel.textColor = .lightGray
     
         self.itemsChanged.subscribe { [weak self] in
-            self?.updateDescription()
+            self?.updateNameAndDescription()
         }
         self.selectedItemIdChanged.subscribe { [weak self] in
-            self?.updateDescription()
+            self?.updateNameAndDescription()
         }
     }
     
-    private func layoutDescription()
+    private func layoutNameAndDescription()
     {
+        self.nameLabel.topAnchor == self.lastView.bottomAnchor + 16
+        self.nameLabel.leftAnchor == self.view.leftAnchor + 16
+        self.nameLabel.rightAnchor == self.view.rightAnchor - 16
+        self.lastView = self.nameLabel
+
         self.descLabel.topAnchor == self.lastView.bottomAnchor + 16
         self.descLabel.leftAnchor == self.view.leftAnchor + 16
         self.descLabel.rightAnchor == self.view.rightAnchor - 16
         self.lastView = self.descLabel
     }
     
-    private func updateDescription()
+    private func updateNameAndDescription()
     {
-        let desc = self.items[self.selectedItemId].desc
-        self.descLabel?.text = desc
+		let fadeOut = { [weak self] in
+        	self?.nameLabel.alpha = 0
+        	self?.descLabel.alpha = 0
+		}
+		let fadeIn = { [weak self] in
+            guard let this = self else { return }
+        	this.nameLabel.text = this.items[this.selectedItemId].name
+        	this.descLabel.text = this.items[this.selectedItemId].desc
+        	self?.nameLabel.alpha = 1
+        	self?.descLabel.alpha = 1
+		}
+		
+        // Animate.
+		let tm = 0.2
+		UIView.animate(withDuration: tm, animations: fadeOut) { (finished) in
+			UIView.animate(withDuration: tm, animations: fadeIn)
+		}
     }
 
     // MARK: - ADDITION
