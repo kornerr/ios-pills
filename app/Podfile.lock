@@ -1,21 +1,30 @@
 PODS:
+  - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
   - Anchorage (4.3.1)
   - FSPagerView (0.8.3)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.9.1)
+  - AlamofireImage (~> 3.6.0)
   - Anchorage (~> 4.3.1)
   - FSPagerView (~> 0.8.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireImage
     - FSPagerView
   trunk:
     - Anchorage
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Anchorage: a187da0bc9b07440637d42c8744b8c82a4490295
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
 
-PODFILE CHECKSUM: 5e8914acda10e266db1e81b5798d517704eb7d49
+PODFILE CHECKSUM: 1c751ef3b7273e3ea114f155595a1d8a2cf510d2
 
 COCOAPODS: 1.8.4
