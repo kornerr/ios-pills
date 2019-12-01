@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-pills/Pods-pills-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework
+${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework

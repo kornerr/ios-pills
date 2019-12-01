@@ -7,22 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0894C67F3FBEDB601FBE53ACA7B11B46 /* Anchorage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B30F4FDFB69EAC3B14F7C3F371DA206 /* Anchorage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2515FE8395F915588C47FD0044774981 /* AnchorGroupProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D312EB6C2681AFCAD104CD71A333093 /* AnchorGroupProvider.swift */; };
-		64A977A2926F264201E6758332BFD32C /* NSLayoutAnchor+MultiplierConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2957C569C83146F1B5A60519BB7CE9 /* NSLayoutAnchor+MultiplierConstraints.swift */; };
-		7200F9D340EB1FB939F733CC44288621 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E43AFC047D73D87CA1855418E152B3C /* Priority.swift */; };
-		780223D2A207693C6C4CE4EDB026C46E /* Anchorage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED03F3BD692B07788402ADFC3B3820D /* Anchorage-dummy.m */; };
-		9FFC663B9F53215E4C99D057A5FEDAB7 /* Compatability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9253CEC6DCBD3BEA65EF9956720B25 /* Compatability.swift */; };
-		AD044B77D1A188A08145F441C9B344B6 /* Pods-pills-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4433BD49696E8201CFF3308EF37A4DC /* Pods-pills-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B3AD9D58AE9F6F363B1B6BD3420AFBA2 /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E9910442BDAE26EC948299120D9508 /* Internal.swift */; };
-		C5EB7F264D4D4AAD00FD45C1A82B3E6F /* Pods-pills-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4A2B51F71CB086EE81B8F1D224088 /* Pods-pills-dummy.m */; };
-		DC78A70213AD32045C96A71CE929E53F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		E98F4619E5A65F75289CBD1568D10E73 /* Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52458BDC6F82A2A58ED5EBDD6B538FD /* Anchorage.swift */; };
-		EB81546CCD1CF5A455956909D3F3A3F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		0894C67F3FBEDB601FBE53ACA7B11B46 /* Anchorage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F220B80FC6EC327CB3A43C3A0B5A0AB5 /* Anchorage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B7AA9DE5B5F63D414B017F3F38C306F /* FSPagerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C11E865D126752618F020E628CDE6815 /* FSPagerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F7935AF21D84F86C34D1276F01A0913 /* Pods-pills-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD4A2B51F71CB086EE81B8F1D224088 /* Pods-pills-dummy.m */; };
+		162A3D0B5F025871F109D2354F9EDF16 /* FSPagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A4D82D7FD6130D0797F74E635412D2 /* FSPagerViewCell.swift */; };
+		2515FE8395F915588C47FD0044774981 /* AnchorGroupProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6CA9D99FE892126FBB5E9AB2085D9 /* AnchorGroupProvider.swift */; };
+		39A607000A7EBFA7A80D4B9060DEF353 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
+		5405240B3B74BEACCD4820595881CB61 /* FSPageViewTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4303A7BE5CD1ECCC24CAF21380D8F7C4 /* FSPageViewTransformer.swift */; };
+		64A977A2926F264201E6758332BFD32C /* NSLayoutAnchor+MultiplierConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D64292754782BC83818AA7DBC43C2C /* NSLayoutAnchor+MultiplierConstraints.swift */; };
+		674354090507B3319EBC2FC18690EC5B /* FSPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA54A4F0484081383F2EC1F782E4D315 /* FSPagerView.swift */; };
+		68198697610DC537182749CAA6296484 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		702D69BF03EA44844FEAD648C0249E88 /* FSPagerViewObjcCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2873C7F0B3E669B0E943604AC510D2D1 /* FSPagerViewObjcCompat.m */; };
+		7200F9D340EB1FB939F733CC44288621 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD1D273FB3B26909DD812F7C1F7AED6 /* Priority.swift */; };
+		780223D2A207693C6C4CE4EDB026C46E /* Anchorage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7079B5F0D07A4FB5FC0F2402F04995 /* Anchorage-dummy.m */; };
+		781328660DE3DBD4C1DEECBCBAEBAB25 /* FSPageViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C658C87ECC8533CECC904E63BE84646 /* FSPageViewLayout.swift */; };
+		88176AA690DE1EBD2F8318DD4B8CB676 /* FSPagerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E842A958342A1EBDF4248464294AC2 /* FSPagerView-dummy.m */; };
+		9FFC663B9F53215E4C99D057A5FEDAB7 /* Compatability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88BB0818622904E23ECA5FC123AF7CA /* Compatability.swift */; };
+		A0AF38BD964E04E88586B10151404B8C /* FSPagerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2978CEF270236B0F04E60305D935683F /* FSPagerCollectionView.swift */; };
+		B3AD9D58AE9F6F363B1B6BD3420AFBA2 /* Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911DCC5E0BBB5EF7DE1F92AB09AD56D /* Internal.swift */; };
+		DC78A70213AD32045C96A71CE929E53F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		DE6294EB50A77BFA608C328A7CAD83A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		E4D526DCF32314F78F832AF8750DCBAA /* FSPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EC5B5DD8702F6DCB015DDA88F55A80 /* FSPageControl.swift */; };
+		E98F4619E5A65F75289CBD1568D10E73 /* Anchorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03845E9D6901BBB00E621E3143D5A128 /* Anchorage.swift */; };
+		EE4DE12E3DE6AABCE0A396052D97E25A /* Pods-pills-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C4433BD49696E8201CFF3308EF37A4DC /* Pods-pills-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1906A44D6C430B8944B317F9E7651A2 /* FSPagerViewObjcCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CEF31557A957F603CC47D93F5EE0DA0 /* FSPagerViewObjcCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2A3B4CFD7ED1812AF44330CCC7E7622 /* FSPagerViewLayoutAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758D363EC5989AF0E072A85F634BDC64 /* FSPagerViewLayoutAttributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FC53248137E8C068BDBADFCFDAA7F677 /* PBXContainerItemProxy */ = {
+		457551B4F8991DDA6823EB2074946989 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4F8239FB329387A8476B964D92D92E7;
+			remoteInfo = FSPagerView;
+		};
+		823447B0837FA04E31245A4FB5480C03 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -32,39 +52,65 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03845E9D6901BBB00E621E3143D5A128 /* Anchorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Anchorage.swift; path = Source/Anchorage.swift; sourceTree = "<group>"; };
 		06CE2EA540C2FB0092422BC29717A1E2 /* Pods-pills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-pills.debug.xcconfig"; sourceTree = "<group>"; };
+		0A7079B5F0D07A4FB5FC0F2402F04995 /* Anchorage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Anchorage-dummy.m"; sourceTree = "<group>"; };
 		0E12DE2E088AC978A87BF34D208F7920 /* Pods-pills-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-pills-Info.plist"; sourceTree = "<group>"; };
-		1E43AFC047D73D87CA1855418E152B3C /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Source/Priority.swift; sourceTree = "<group>"; };
-		1F5699F040E86BE36567A41620638E5E /* Anchorage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Anchorage.modulemap; sourceTree = "<group>"; };
+		0F47FB5E28EE8C8342B1776D813D1A4C /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FSPagerView.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19FBFB8F89B24AE5C30A27E883B9EE4A /* FSPagerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSPagerView.xcconfig; sourceTree = "<group>"; };
+		1CEF31557A957F603CC47D93F5EE0DA0 /* FSPagerViewObjcCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSPagerViewObjcCompat.h; path = Sources/FSPagerViewObjcCompat.h; sourceTree = "<group>"; };
 		22B14A4D73EFEC6F5113C412785A5EDD /* Pods-pills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-pills.release.xcconfig"; sourceTree = "<group>"; };
-		283A54DE194F6C437EE1495D7875C2DC /* Anchorage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Anchorage-prefix.pch"; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		25E842A958342A1EBDF4248464294AC2 /* FSPagerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSPagerView-dummy.m"; sourceTree = "<group>"; };
+		2873C7F0B3E669B0E943604AC510D2D1 /* FSPagerViewObjcCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSPagerViewObjcCompat.m; path = Sources/FSPagerViewObjcCompat.m; sourceTree = "<group>"; };
+		2978CEF270236B0F04E60305D935683F /* FSPagerCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerCollectionView.swift; path = Sources/FSPagerCollectionView.swift; sourceTree = "<group>"; };
+		2ADBEAA5A853F2815E5BD6C0B54AC98A /* FSPagerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FSPagerView.modulemap; sourceTree = "<group>"; };
+		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		336BCCE9FD24DC2B5448E139DB21CFE6 /* Anchorage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Anchorage.xcconfig; sourceTree = "<group>"; };
 		3442A8CA8DF926E2FC4147C3A503F59C /* Pods-pills-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-pills-acknowledgements.plist"; sourceTree = "<group>"; };
-		35E9910442BDAE26EC948299120D9508 /* Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Internal.swift; path = Source/Internal.swift; sourceTree = "<group>"; };
-		3B30F4FDFB69EAC3B14F7C3F371DA206 /* Anchorage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Anchorage-umbrella.h"; sourceTree = "<group>"; };
-		66356512ECA59D97F6262F6B6F7AD09A /* Anchorage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Anchorage-Info.plist"; sourceTree = "<group>"; };
-		6D9253CEC6DCBD3BEA65EF9956720B25 /* Compatability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compatability.swift; path = Source/Compatability.swift; sourceTree = "<group>"; };
-		6ED03F3BD692B07788402ADFC3B3820D /* Anchorage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Anchorage-dummy.m"; sourceTree = "<group>"; };
+		34A4D82D7FD6130D0797F74E635412D2 /* FSPagerViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerViewCell.swift; path = Sources/FSPagerViewCell.swift; sourceTree = "<group>"; };
+		3AD1D273FB3B26909DD812F7C1F7AED6 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Source/Priority.swift; sourceTree = "<group>"; };
+		4303A7BE5CD1ECCC24CAF21380D8F7C4 /* FSPageViewTransformer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPageViewTransformer.swift; path = Sources/FSPageViewTransformer.swift; sourceTree = "<group>"; };
+		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		44C0993CE5FD4E8056DF4C39B99F1C98 /* Anchorage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Anchorage.modulemap; sourceTree = "<group>"; };
+		4C52A7E752064839083A2E799D27FCDE /* Anchorage-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Anchorage-Info.plist"; sourceTree = "<group>"; };
+		4CF6CA9D99FE892126FBB5E9AB2085D9 /* AnchorGroupProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnchorGroupProvider.swift; path = Source/AnchorGroupProvider.swift; sourceTree = "<group>"; };
+		55D64292754782BC83818AA7DBC43C2C /* NSLayoutAnchor+MultiplierConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutAnchor+MultiplierConstraints.swift"; path = "Source/NSLayoutAnchor+MultiplierConstraints.swift"; sourceTree = "<group>"; };
+		6645926B8F984840718398E288430C79 /* Anchorage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Anchorage-prefix.pch"; sourceTree = "<group>"; };
+		6C658C87ECC8533CECC904E63BE84646 /* FSPageViewLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPageViewLayout.swift; path = Sources/FSPageViewLayout.swift; sourceTree = "<group>"; };
 		73AB7475F4FABE755A024176D3A38213 /* Pods-pills.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-pills.modulemap"; sourceTree = "<group>"; };
-		7D2957C569C83146F1B5A60519BB7CE9 /* NSLayoutAnchor+MultiplierConstraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutAnchor+MultiplierConstraints.swift"; path = "Source/NSLayoutAnchor+MultiplierConstraints.swift"; sourceTree = "<group>"; };
-		7D312EB6C2681AFCAD104CD71A333093 /* AnchorGroupProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnchorGroupProvider.swift; path = Source/AnchorGroupProvider.swift; sourceTree = "<group>"; };
-		889920E75B31D8C6CC6226C9196EC996 /* Anchorage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Anchorage.xcconfig; sourceTree = "<group>"; };
+		758D363EC5989AF0E072A85F634BDC64 /* FSPagerViewLayoutAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerViewLayoutAttributes.swift; path = Sources/FSPagerViewLayoutAttributes.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A8EC321056E357EA017FB66003CDF87F /* Pods_pills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_pills.framework; path = "Pods-pills.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3EC5B5DD8702F6DCB015DDA88F55A80 /* FSPageControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPageControl.swift; path = Sources/FSPageControl.swift; sourceTree = "<group>"; };
 		B477F169CB917A9F07ABB3C6B0ED46BE /* Anchorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Anchorage.framework; path = Anchorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B88BB0818622904E23ECA5FC123AF7CA /* Compatability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compatability.swift; path = Source/Compatability.swift; sourceTree = "<group>"; };
+		B911DCC5E0BBB5EF7DE1F92AB09AD56D /* Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Internal.swift; path = Source/Internal.swift; sourceTree = "<group>"; };
+		C11E865D126752618F020E628CDE6815 /* FSPagerView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSPagerView-umbrella.h"; sourceTree = "<group>"; };
 		C4433BD49696E8201CFF3308EF37A4DC /* Pods-pills-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-pills-umbrella.h"; sourceTree = "<group>"; };
+		DA41482B1BC8652A622C6243A46D35E8 /* FSPagerView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FSPagerView-Info.plist"; sourceTree = "<group>"; };
 		E49FFA9F02917198BCBAB78223EDB860 /* Pods-pills-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-pills-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E52458BDC6F82A2A58ED5EBDD6B538FD /* Anchorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Anchorage.swift; path = Source/Anchorage.swift; sourceTree = "<group>"; };
+		E7013784ACD949A7166A24E7124454E1 /* FSPagerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSPagerView-prefix.pch"; sourceTree = "<group>"; };
+		EA54A4F0484081383F2EC1F782E4D315 /* FSPagerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FSPagerView.swift; path = Sources/FSPagerView.swift; sourceTree = "<group>"; };
 		EAD4A2B51F71CB086EE81B8F1D224088 /* Pods-pills-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-pills-dummy.m"; sourceTree = "<group>"; };
+		F220B80FC6EC327CB3A43C3A0B5A0AB5 /* Anchorage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Anchorage-umbrella.h"; sourceTree = "<group>"; };
 		FEFBA211D0AA7CEEAACD248692B9E560 /* Pods-pills-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-pills-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5761D7BDC19642A27A2583E292C17CBE /* Frameworks */ = {
+		237DC3AA41D878329FB1C084D5B0B08A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB81546CCD1CF5A455956909D3F3A3F0 /* Foundation.framework in Frameworks */,
+				DE6294EB50A77BFA608C328A7CAD83A8 /* Foundation.framework in Frameworks */,
+				39A607000A7EBFA7A80D4B9060DEF353 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A6A379E3A1072833D4F470D60B4DE9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68198697610DC537182749CAA6296484 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,12 +125,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0FC101D5E4B2D6FB5D7A37F01B6C185C /* Pods */ = {
+		097C8ECEBE7246FF5EC6A06BA39B403F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F4B92A149A9D5D8D3043E8D9C08C574E /* Anchorage */,
+				44C0993CE5FD4E8056DF4C39B99F1C98 /* Anchorage.modulemap */,
+				336BCCE9FD24DC2B5448E139DB21CFE6 /* Anchorage.xcconfig */,
+				0A7079B5F0D07A4FB5FC0F2402F04995 /* Anchorage-dummy.m */,
+				4C52A7E752064839083A2E799D27FCDE /* Anchorage-Info.plist */,
+				6645926B8F984840718398E288430C79 /* Anchorage-prefix.pch */,
+				F220B80FC6EC327CB3A43C3A0B5A0AB5 /* Anchorage-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/Anchorage";
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BBB9B1E67398AA53DB8E94570A2D4B7 /* FSPagerView */ = {
+			isa = PBXGroup;
+			children = (
+				B3EC5B5DD8702F6DCB015DDA88F55A80 /* FSPageControl.swift */,
+				2978CEF270236B0F04E60305D935683F /* FSPagerCollectionView.swift */,
+				EA54A4F0484081383F2EC1F782E4D315 /* FSPagerView.swift */,
+				34A4D82D7FD6130D0797F74E635412D2 /* FSPagerViewCell.swift */,
+				758D363EC5989AF0E072A85F634BDC64 /* FSPagerViewLayoutAttributes.swift */,
+				1CEF31557A957F603CC47D93F5EE0DA0 /* FSPagerViewObjcCompat.h */,
+				2873C7F0B3E669B0E943604AC510D2D1 /* FSPagerViewObjcCompat.m */,
+				6C658C87ECC8533CECC904E63BE84646 /* FSPageViewLayout.swift */,
+				4303A7BE5CD1ECCC24CAF21380D8F7C4 /* FSPageViewTransformer.swift */,
+				7447D83F17FC8F36003AF8351C110A06 /* Support Files */,
+			);
+			name = FSPagerView;
+			path = FSPagerView;
 			sourceTree = "<group>";
 		};
 		2B6095F20AA35F4D538EC8A181AF71DE /* Pods-pills */ = {
@@ -104,54 +182,72 @@
 			path = "Target Support Files/Pods-pills";
 			sourceTree = "<group>";
 		};
-		5D64992AADAF284A630FA3EDE751EBCC /* Support Files */ = {
+		45FD1B6BB29FC69CDB3520B266D83CFF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1F5699F040E86BE36567A41620638E5E /* Anchorage.modulemap */,
-				889920E75B31D8C6CC6226C9196EC996 /* Anchorage.xcconfig */,
-				6ED03F3BD692B07788402ADFC3B3820D /* Anchorage-dummy.m */,
-				66356512ECA59D97F6262F6B6F7AD09A /* Anchorage-Info.plist */,
-				283A54DE194F6C437EE1495D7875C2DC /* Anchorage-prefix.pch */,
-				3B30F4FDFB69EAC3B14F7C3F371DA206 /* Anchorage-umbrella.h */,
+				6A621F6DFA1E45EFF8CB35342EC2719F /* Anchorage */,
+				1BBB9B1E67398AA53DB8E94570A2D4B7 /* FSPagerView */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Anchorage";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		75EFE1CE8AA41BA078D1FC5C9957DB66 /* Products */ = {
+		6A621F6DFA1E45EFF8CB35342EC2719F /* Anchorage */ = {
+			isa = PBXGroup;
+			children = (
+				03845E9D6901BBB00E621E3143D5A128 /* Anchorage.swift */,
+				4CF6CA9D99FE892126FBB5E9AB2085D9 /* AnchorGroupProvider.swift */,
+				B88BB0818622904E23ECA5FC123AF7CA /* Compatability.swift */,
+				B911DCC5E0BBB5EF7DE1F92AB09AD56D /* Internal.swift */,
+				55D64292754782BC83818AA7DBC43C2C /* NSLayoutAnchor+MultiplierConstraints.swift */,
+				3AD1D273FB3B26909DD812F7C1F7AED6 /* Priority.swift */,
+				097C8ECEBE7246FF5EC6A06BA39B403F /* Support Files */,
+			);
+			name = Anchorage;
+			path = Anchorage;
+			sourceTree = "<group>";
+		};
+		7447D83F17FC8F36003AF8351C110A06 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2ADBEAA5A853F2815E5BD6C0B54AC98A /* FSPagerView.modulemap */,
+				19FBFB8F89B24AE5C30A27E883B9EE4A /* FSPagerView.xcconfig */,
+				25E842A958342A1EBDF4248464294AC2 /* FSPagerView-dummy.m */,
+				DA41482B1BC8652A622C6243A46D35E8 /* FSPagerView-Info.plist */,
+				E7013784ACD949A7166A24E7124454E1 /* FSPagerView-prefix.pch */,
+				C11E865D126752618F020E628CDE6815 /* FSPagerView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FSPagerView";
+			sourceTree = "<group>";
+		};
+		851DAC5F0BA3027032BC0B999BEFF7DA /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				B477F169CB917A9F07ABB3C6B0ED46BE /* Anchorage.framework */,
+				0F47FB5E28EE8C8342B1776D813D1A4C /* FSPagerView.framework */,
 				A8EC321056E357EA017FB66003CDF87F /* Pods_pills.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				0FC101D5E4B2D6FB5D7A37F01B6C185C /* Pods */,
-				75EFE1CE8AA41BA078D1FC5C9957DB66 /* Products */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				45FD1B6BB29FC69CDB3520B266D83CFF /* Pods */,
+				851DAC5F0BA3027032BC0B999BEFF7DA /* Products */,
 				F32FE2634CF7677CD85C99B586302EB0 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */,
+				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
 			);
-			name = Frameworks;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		F32FE2634CF7677CD85C99B586302EB0 /* Targets Support Files */ = {
@@ -162,37 +258,31 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F4B92A149A9D5D8D3043E8D9C08C574E /* Anchorage */ = {
-			isa = PBXGroup;
-			children = (
-				E52458BDC6F82A2A58ED5EBDD6B538FD /* Anchorage.swift */,
-				7D312EB6C2681AFCAD104CD71A333093 /* AnchorGroupProvider.swift */,
-				6D9253CEC6DCBD3BEA65EF9956720B25 /* Compatability.swift */,
-				35E9910442BDAE26EC948299120D9508 /* Internal.swift */,
-				7D2957C569C83146F1B5A60519BB7CE9 /* NSLayoutAnchor+MultiplierConstraints.swift */,
-				1E43AFC047D73D87CA1855418E152B3C /* Priority.swift */,
-				5D64992AADAF284A630FA3EDE751EBCC /* Support Files */,
-			);
-			name = Anchorage;
-			path = Anchorage;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		352474A53768215E843ED9BF9C25916E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD044B77D1A188A08145F441C9B344B6 /* Pods-pills-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3EBD362E9DB1A81735A787511851260B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0894C67F3FBEDB601FBE53ACA7B11B46 /* Anchorage-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4454489AB171875A5E7781CBAB91FE96 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE4DE12E3DE6AABCE0A396052D97E25A /* Pods-pills-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E06654AA5AE3B62D7F9C42D92ECD17D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B7AA9DE5B5F63D414B017F3F38C306F /* FSPagerView-umbrella.h in Headers */,
+				F1906A44D6C430B8944B317F9E7651A2 /* FSPagerViewObjcCompat.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,19 +307,38 @@
 			productReference = B477F169CB917A9F07ABB3C6B0ED46BE /* Anchorage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DD701DC5AE723C11363E44CC2EB7B011 /* Pods-pills */ = {
+		D4F8239FB329387A8476B964D92D92E7 /* FSPagerView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF8F33855F086DF0CB0E7F2C007DA361 /* Build configuration list for PBXNativeTarget "Pods-pills" */;
+			buildConfigurationList = DA7FF8FC28A7EB05F7308868F48D6938 /* Build configuration list for PBXNativeTarget "FSPagerView" */;
 			buildPhases = (
-				352474A53768215E843ED9BF9C25916E /* Headers */,
-				F5FB7988DD2E195035E31BCF23612192 /* Sources */,
-				5761D7BDC19642A27A2583E292C17CBE /* Frameworks */,
-				17CFBE1A10B017AE987FF495BCC10ABE /* Resources */,
+				7E06654AA5AE3B62D7F9C42D92ECD17D /* Headers */,
+				C4484A10068696C80FF01E1E3C8CE558 /* Sources */,
+				237DC3AA41D878329FB1C084D5B0B08A /* Frameworks */,
+				9A620828AD4F8074C92E7134F598A83E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F70EB33FCBCF6B971B5058095AEE9860 /* PBXTargetDependency */,
+			);
+			name = FSPagerView;
+			productName = FSPagerView;
+			productReference = 0F47FB5E28EE8C8342B1776D813D1A4C /* FSPagerView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DD701DC5AE723C11363E44CC2EB7B011 /* Pods-pills */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 983DD70B94D7E07E1FE91344FBC7AFAA /* Build configuration list for PBXNativeTarget "Pods-pills" */;
+			buildPhases = (
+				4454489AB171875A5E7781CBAB91FE96 /* Headers */,
+				992300250A756A0C2CCFC1FF48034928 /* Sources */,
+				2A6A379E3A1072833D4F470D60B4DE9C /* Frameworks */,
+				F723FB56C170FB8BC22D4A4D1C84F152 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5BDEC67CC3AA44464C15D6B22B3155B3 /* PBXTargetDependency */,
+				FC351A0B5E67BA3ADEBE44350E35D0FE /* PBXTargetDependency */,
 			);
 			name = "Pods-pills";
 			productName = "Pods-pills";
@@ -254,18 +363,19 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 75EFE1CE8AA41BA078D1FC5C9957DB66 /* Products */;
+			productRefGroup = 851DAC5F0BA3027032BC0B999BEFF7DA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				4607A9D579EE69C57F52971930107170 /* Anchorage */,
+				D4F8239FB329387A8476B964D92D92E7 /* FSPagerView */,
 				DD701DC5AE723C11363E44CC2EB7B011 /* Pods-pills */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		17CFBE1A10B017AE987FF495BCC10ABE /* Resources */ = {
+		9A620828AD4F8074C92E7134F598A83E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -273,6 +383,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E149C2E32522EC35FDB2615965701FDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F723FB56C170FB8BC22D4A4D1C84F152 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -296,26 +413,83 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5FB7988DD2E195035E31BCF23612192 /* Sources */ = {
+		992300250A756A0C2CCFC1FF48034928 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5EB7F264D4D4AAD00FD45C1A82B3E6F /* Pods-pills-dummy.m in Sources */,
+				0F7935AF21D84F86C34D1276F01A0913 /* Pods-pills-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4484A10068696C80FF01E1E3C8CE558 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4D526DCF32314F78F832AF8750DCBAA /* FSPageControl.swift in Sources */,
+				A0AF38BD964E04E88586B10151404B8C /* FSPagerCollectionView.swift in Sources */,
+				88176AA690DE1EBD2F8318DD4B8CB676 /* FSPagerView-dummy.m in Sources */,
+				674354090507B3319EBC2FC18690EC5B /* FSPagerView.swift in Sources */,
+				162A3D0B5F025871F109D2354F9EDF16 /* FSPagerViewCell.swift in Sources */,
+				F2A3B4CFD7ED1812AF44330CCC7E7622 /* FSPagerViewLayoutAttributes.swift in Sources */,
+				702D69BF03EA44844FEAD648C0249E88 /* FSPagerViewObjcCompat.m in Sources */,
+				781328660DE3DBD4C1DEECBCBAEBAB25 /* FSPageViewLayout.swift in Sources */,
+				5405240B3B74BEACCD4820595881CB61 /* FSPageViewTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F70EB33FCBCF6B971B5058095AEE9860 /* PBXTargetDependency */ = {
+		5BDEC67CC3AA44464C15D6B22B3155B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Anchorage;
 			target = 4607A9D579EE69C57F52971930107170 /* Anchorage */;
-			targetProxy = FC53248137E8C068BDBADFCFDAA7F677 /* PBXContainerItemProxy */;
+			targetProxy = 823447B0837FA04E31245A4FB5480C03 /* PBXContainerItemProxy */;
+		};
+		FC351A0B5E67BA3ADEBE44350E35D0FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FSPagerView;
+			target = D4F8239FB329387A8476B964D92D92E7 /* FSPagerView */;
+			targetProxy = 457551B4F8991DDA6823EB2074946989 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0B901235133AB3362D04A1348B021B09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FBFB8F89B24AE5C30A27E883B9EE4A /* FSPagerView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FSPagerView/FSPagerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FSPagerView/FSPagerView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FSPagerView/FSPagerView.modulemap";
+				PRODUCT_MODULE_NAME = FSPagerView;
+				PRODUCT_NAME = FSPagerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -382,7 +556,7 @@
 		};
 		2A4032145C3F2D3835CD7E307A860A36 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 889920E75B31D8C6CC6226C9196EC996 /* Anchorage.xcconfig */;
+			baseConfigurationReference = 336BCCE9FD24DC2B5448E139DB21CFE6 /* Anchorage.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -415,9 +589,9 @@
 			};
 			name = Debug;
 		};
-		7353CE7D0381D2EDF26A007DB96B3345 /* Release */ = {
+		436882D381DB3A457C13652EF4E4AB72 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22B14A4D73EFEC6F5113C412785A5EDD /* Pods-pills.release.xcconfig */;
+			baseConfigurationReference = 06CE2EA540C2FB0092422BC29717A1E2 /* Pods-pills.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -448,11 +622,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -514,9 +687,9 @@
 			};
 			name = Release;
 		};
-		E41AAA15CF4DF9A3F591B6CC8078386D /* Debug */ = {
+		EB08AF54ACD953B73031351029F99702 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06CE2EA540C2FB0092422BC29717A1E2 /* Pods-pills.debug.xcconfig */;
+			baseConfigurationReference = 22B14A4D73EFEC6F5113C412785A5EDD /* Pods-pills.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -547,14 +720,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		EEC8C974F56B1172257C1FC18B27A52E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 889920E75B31D8C6CC6226C9196EC996 /* Anchorage.xcconfig */;
+			baseConfigurationReference = 336BCCE9FD24DC2B5448E139DB21CFE6 /* Anchorage.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -588,6 +762,42 @@
 			};
 			name = Release;
 		};
+		F502B06BD09CDC07B31C1EE9F88E6373 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FBFB8F89B24AE5C30A27E883B9EE4A /* FSPagerView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FSPagerView/FSPagerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FSPagerView/FSPagerView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/FSPagerView/FSPagerView.modulemap";
+				PRODUCT_MODULE_NAME = FSPagerView;
+				PRODUCT_NAME = FSPagerView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -600,11 +810,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF8F33855F086DF0CB0E7F2C007DA361 /* Build configuration list for PBXNativeTarget "Pods-pills" */ = {
+		983DD70B94D7E07E1FE91344FBC7AFAA /* Build configuration list for PBXNativeTarget "Pods-pills" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E41AAA15CF4DF9A3F591B6CC8078386D /* Debug */,
-				7353CE7D0381D2EDF26A007DB96B3345 /* Release */,
+				436882D381DB3A457C13652EF4E4AB72 /* Debug */,
+				EB08AF54ACD953B73031351029F99702 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -614,6 +824,15 @@
 			buildConfigurations = (
 				2A4032145C3F2D3835CD7E307A860A36 /* Debug */,
 				EEC8C974F56B1172257C1FC18B27A52E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA7FF8FC28A7EB05F7308868F48D6938 /* Build configuration list for PBXNativeTarget "FSPagerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B901235133AB3362D04A1348B021B09 /* Debug */,
+				F502B06BD09CDC07B31C1EE9F88E6373 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

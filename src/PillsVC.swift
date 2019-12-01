@@ -1,22 +1,34 @@
+import Anchorage
+import FSPagerView
 import UIKit
 
 class PillsVC: UIViewController
-    //,UITableViewDataSource
-    //,UITableViewDelegate
+    ,FSPagerViewDataSource
+    ,FSPagerViewDelegate
 {
+
+    private var lastView: UIView!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.setupPagerView()
         /*
-        self.setupTableView()
-        self.tableView.register(Cell.self, forCellReuseIdentifier: self.CELL_ID)
-
         // Selection.
         self.tableView.delegate = self
         
         self.setupAddition()
         */
+
+        // Layout.
+        self.lastView = startLastView(forVC: self)
+        self.layoutPagerView()
+    }
+
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        self.layoutPagerViewItems()
     }
 
     private func LOG(_ message: String)
@@ -35,68 +47,84 @@ class PillsVC: UIViewController
     }
     let itemsChanged = Reporter()
 
-    /*
-    // MARK: - TABLE VIEW
+    // MARK: - PAGER VIEW
 
-    private var tableView: UITableView!
+    private var pagerView: FSPagerView!
 
-    private func setupTableView()
+    private func setupPagerView()
     {
-        self.tableView = UITableView(frame: .zero, style: .plain)
-        self.view.embeddedView = self.tableView
-        self.tableView.backgroundColor = .clear
-        self.tableView.dataSource = self
-    
+        self.pagerView = FSPagerView()
+        self.view.addSubview(self.pagerView)
+
+        self.pagerView.dataSource = self
+        self.pagerView.transformer = FSPagerViewTransformer(type: .linear)
+        self.pagerView.register(
+            Cell.self,
+            forCellWithReuseIdentifier: self.CELL_ID
+        )
+
         // Refresh on changes.
         self.itemsChanged.subscribe { [weak self] in
-            self?.tableView.reloadData()
+            self?.pagerView.reloadData()
         }
     }
+
+    private func layoutPagerView()
+    {
+        self.pagerView.topAnchor == self.lastView.bottomAnchor + 8
+        self.pagerView.leftAnchor == self.view.leftAnchor
+        self.pagerView.rightAnchor == self.view.rightAnchor
+        self.pagerView.heightAnchor == self.view.heightAnchor / 2
+        self.lastView = self.pagerView
+    }
     
-    func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
-    ) -> Int {
+    private func layoutPagerViewItems()
+    {
+        let size = self.pagerView.frame.size
+        let height = size.height
+        let width = size.width / 1.5
+        self.pagerView.itemSize = CGSize(width: width, height: height)
+    }
+    
+    func numberOfItems(in pagerView: FSPagerView) -> Int
+    {
         return self.items.count
     }
-    
-    func tableView(
-       _ tableView: UITableView,
-       cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
-        return self.cell(forItemAt: indexPath)
+
+    func pagerView(
+        _ pagerView: FSPagerView,
+        cellForItemAt index: Int
+    ) -> FSPagerViewCell {
+        return self.cell(forItemAt: index)
     }
-
-    // MARK: - TODO ?
-
-    // private var dequeued = [CellView : Int]()
 
     // MARK: - CELL
 
+    private var dequeued = [CellView : Int]()
     private let CELL_ID = "CELL_ID"
-    private typealias Cell = UITableViewCell
-    //private typealias CellView = UIImageView
-    //private typealias Cell = UICollectionViewCellTemplate<CellView>
+    private typealias CellView = UIImageView
+    private typealias Cell = FSPagerViewCellTemplate<CellView>
     
-    private func cell(forItemAt indexPath: IndexPath) -> UITableViewCell
+    private func cell(forItemAt index: Int) -> FSPagerViewCell
     {
         let cell =
-            self.tableView.dequeueReusableCell(
-                withIdentifier: self.CELL_ID,
-                for: indexPath
+            self.pagerView.dequeueReusableCell(
+                withReuseIdentifier: self.CELL_ID,
+                at: index
             )
-        cell.selectionStyle = .none
-        cell.accessoryType = .disclosureIndicator
-
-        let index = indexPath.row
-        let item = self.items[index]
-        let textId = item.type.rawValue
-        cell.textLabel?.text = NSLocalizedString(textId, comment: "")
-        //self.dequeued[cell.view] = index
-        
+            as! Cell
+        cell.backgroundColor = .gray
+        /*
+        cell.itemView.image = self.images[index] ?? self.placeholderImage
+        cell.itemView.contentMode = .scaleAspectFill
+        cell.itemView.clipsToBounds = true
+        cell.contentView.layer.shadowRadius = 0
+        self.dequeued[cell.itemView] = index
+        */
         return cell
     }
 
+    /*
     // MARK: - SELECTION
 
     var selectedItemId: Int?
@@ -114,9 +142,11 @@ class PillsVC: UIViewController
     ) {
         self.selectedItemId = indexPath.row
     }
+    */
 
     // MARK: - ADDITION
 
+    /*
     let addItem = Reporter()
     private var addButton: UIBarButtonItem!
 

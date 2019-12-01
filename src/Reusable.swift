@@ -1,4 +1,5 @@
 import Anchorage
+import FSPagerView
 import UIKit
 
 // MARK: - UIView.embeddedView
@@ -292,3 +293,22 @@ func finishLastView(_ view: UIView, forVC vc: UIViewController)
     }
 }
 
+// MARK: - Use any UIView inside an FS pager view cell.
+
+class FSPagerViewCellTemplate<ItemView: UIView>: FSPagerViewCell
+{
+    var itemView: ItemView!
+
+    override init(frame: CGRect)
+    {
+        super.init(frame: frame)
+        // Create and embed item view.
+        self.itemView = ItemView()
+        self.contentView.embeddedView = self.itemView
+    }
+
+    required init?(coder aDecoder: NSCoder)
+    {
+        fatalError("FSPagerViewCellTemplate. ERROR: init(coder:) not implemented")
+    }
+}
