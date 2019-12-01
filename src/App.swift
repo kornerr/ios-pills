@@ -51,6 +51,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             self?.pillsVC.images = images
         }
 
+        // Cycle items forward.
+        self.pillsVC.cycle.subscribe { [weak self] in
+            self?.pillsVC.cycleItems()
+        }
+
         // Initial request.
         self.pillsController.refresh()
     }

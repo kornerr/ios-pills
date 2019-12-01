@@ -28,13 +28,13 @@ class PillsVC: UIViewController
         self.layoutNameAndDescription()
 
         self.layoutCycler()
-        //finishLastView(self.cycleButton, forVC: self)
     }
 
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
         self.layoutPagerViewItems()
+        self.roundCyclerCorners()
     }
 
     private func LOG(_ message: String)
@@ -102,6 +102,16 @@ class PillsVC: UIViewController
         cellForItemAt index: Int
     ) -> FSPagerViewCell {
         return self.cell(forItemAt: index)
+    }
+
+    func cycleItems()
+    {
+        var id = self.pagerView.currentIndex + 1
+        if id >= self.items.count
+        {
+            id = 0
+        }
+        self.pagerView.scrollToItem(at: id, animated: true)
     }
 
     // MARK: - CELL
@@ -300,9 +310,9 @@ class PillsVC: UIViewController
         self.cycleButton.contentEdgeInsets =
             UIEdgeInsets(
                 top: inset,
-                left: inset,
+                left: inset * 2,
                 bottom: inset,
-                right: inset
+                right: inset * 2
             )
 
         self.cycleButton.setTitle(
@@ -318,8 +328,21 @@ class PillsVC: UIViewController
 
     private func layoutCycler()
     {
-        self.cycleButton.topAnchor == self.lastView.bottomAnchor + 8
+        //self.cycleButton.topAnchor == self.lastView.bottomAnchor + 8
         self.cycleButton.rightAnchor == self.view.rightAnchor - 16
+        if #available(iOS 11.0, *)
+        {
+            self.cycleButton.bottomAnchor == self.view.safeAreaLayoutGuide.bottomAnchor - 16
+        }
+        else
+        {
+            self.cycleButton.bottomAnchor == self.bottomLayoutGuide.topAnchor - 16
+        }
+    }
+
+    private func roundCyclerCorners()
+    {
+        self.cycleButton.layer.cornerRadius = self.cycleButton.frame.size.height / 2
     }
 
     @objc func reportCycle(_ sender: Any)
