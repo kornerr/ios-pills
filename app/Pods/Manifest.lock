@@ -3,6 +3,23 @@ PODS:
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
   - Anchorage (4.3.1)
+  - CHIPageControl (0.2):
+    - CHIPageControl/Aji (= 0.2)
+    - CHIPageControl/Aleppo (= 0.2)
+    - CHIPageControl/Chimayo (= 0.2)
+    - CHIPageControl/Fresno (= 0.2)
+    - CHIPageControl/Jalapeno (= 0.2)
+    - CHIPageControl/Jaloro (= 0.2)
+    - CHIPageControl/Paprika (= 0.2)
+    - CHIPageControl/Puya (= 0.2)
+  - CHIPageControl/Aji (0.2)
+  - CHIPageControl/Aleppo (0.2)
+  - CHIPageControl/Chimayo (0.2)
+  - CHIPageControl/Fresno (0.2)
+  - CHIPageControl/Jalapeno (0.2)
+  - CHIPageControl/Jaloro (0.2)
+  - CHIPageControl/Paprika (0.2)
+  - CHIPageControl/Puya (0.2)
   - FSPagerView (0.8.3)
   - SwiftyJSON (5.0.0)
 
@@ -10,6 +27,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - AlamofireImage (~> 3.6.0)
   - Anchorage (~> 4.3.1)
+  - CHIPageControl (~> 0.2)
   - FSPagerView (~> 0.8.0)
   - SwiftyJSON (~> 5.0.0)
 
@@ -17,6 +35,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
+    - CHIPageControl
     - FSPagerView
     - SwiftyJSON
   trunk:
@@ -26,9 +45,10 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Anchorage: a187da0bc9b07440637d42c8744b8c82a4490295
+  CHIPageControl: a787bf7205c9b7e7fbfc412be36c5e8636b68f86
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1d5a455ce8c026acf88a8a459bc03b97c8c868ff
+PODFILE CHECKSUM: 86252e240a78991db6a020021dfa37e47af86a64
 
 COCOAPODS: 1.8.4

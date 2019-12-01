@@ -1,4 +1,5 @@
 import Anchorage
+import CHIPageControl
 import FSPagerView
 import UIKit
 
@@ -12,18 +13,17 @@ class PillsVC: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
         self.setupPagerView()
         self.setupImages()
-        /*
-        // Selection.
-        self.tableView.delegate = self
-        
-        self.setupAddition()
-        */
+        self.setupSelection()
+        self.setupDots()
+        //self.setupRefresh()
 
         // Layout.
         self.lastView = startLastView(forVC: self)
         self.layoutPagerView()
+        self.layoutDots()
     }
 
     override func viewDidLayoutSubviews()
@@ -155,7 +155,6 @@ class PillsVC: UIViewController
         }
     }
 
-    /*
     // MARK: - SELECTION
 
     var selectedItemId: Int?
@@ -167,13 +166,60 @@ class PillsVC: UIViewController
     }
     let selectedItemIdChanged = Reporter()
 
-    func tableView(
-        _ tableView: UITableView,
-        didSelectRowAt indexPath: IndexPath
-    ) {
-        self.selectedItemId = indexPath.row
+    private func setupSelection()
+    {
+        self.pagerView.delegate = self
     }
-    */
+
+    func pagerView(
+       _ pagerView: FSPagerView,
+       shouldSelectItemAt index: Int
+    ) -> Bool {
+        self.pagerView.scrollToItem(at: index, animated: true)
+        return true
+    }
+    
+    func pagerViewDidScroll(_ pagerView: FSPagerView)
+    {
+        // Skip setting the same value.
+        if
+            let id = self.selectedItemId,
+            id == self.pagerView.currentIndex
+        {
+            return
+        }
+
+        self.selectedItemId = self.pagerView.currentIndex
+    }
+
+    // MARK: - DOTS
+
+    private var pageControl: CHIPageControlJalapeno!
+    
+    private func setupDots()
+    {
+        self.pageControl = CHIPageControlJalapeno()
+        self.view.addSubview(self.pageControl)
+        self.pageControl.radius = 2
+        self.pageControl.tintColor = UIColor.lightGray
+        self.pageControl.currentPageTintColor = self.view.tintColor
+    
+        self.itemsChanged.subscribe { [weak self] in
+            guard let count = self?.items.count else { return }
+            self?.pageControl.numberOfPages = count
+        }
+        self.selectedItemIdChanged.subscribe { [weak self] in
+            guard let id = self?.selectedItemId else { return }
+            self?.pageControl.progress = Double(id)
+        }
+    }
+    
+    private func layoutDots()
+    {
+        self.pageControl.topAnchor == self.lastView.bottomAnchor + 8
+        self.pageControl.centerXAnchor == self.view.centerXAnchor
+        self.lastView = self.pageControl
+    }
 
     // MARK: - ADDITION
 
