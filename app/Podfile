@@ -1,0 +1,6 @@
+platform :ios, '10.0'
+
+target 'pills' do
+    use_frameworks!
+    pod 'Anchorage', '~> 4.3.1'
+end

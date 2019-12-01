@@ -1,0 +1,13 @@
+name: Pills
+options:
+    bundleIdPrefix: su.koren
+targets:
+    pills:
+        type: application
+        platform: iOS
+        deploymentTarget: "10.0"
+        sources:
+            - path: "../src"
+        settings:
+            base:
+                INFOPLIST_FILE: Info.plist

@@ -1,0 +1,6 @@
+framework module Pods_pills {
+  umbrella header "Pods-pills-umbrella.h"
+
+  export *
+  module * { export * }
+}
