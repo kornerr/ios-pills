@@ -1,12 +1,15 @@
-import Foundation
+import Alamofire
+import SwiftyJSON
 
 class PillsController
 {
+    let API_URL = "https://cloud.fdoctor.ru/test_task/"
+
     init() { }
 
     func refresh()
     {
-        //self.items = []
+        // TODO: self.items = []
         self.loadItems()
     }
 
@@ -28,22 +31,51 @@ class PillsController
 
     func loadItems()
     {
-        self.items = [
-            Pill(
-                id: 1,
-                name: "Мезим форте",
-                imgURLString: "https://cloud.fdoctor.ru/test_task/static/mezim.jpg",
-                desc: "Перед завтраком",
-                dose: "По таблетке"
-            ),
-            Pill(
-                id: 2,
-                name: "Bioderma",
-                imgURLString: "https://cloud.fdoctor.ru/test_task/static/bioderma.jpg",
-                desc: "Во время еды",
-                dose: "По 3 глотка"
-            ),
-        ]
+        guard
+            let url = URL(string: self.API_URL)
+        else
+        {
+            self.LOG("ERROR Request URL was malformed")
+            return
+        }
+
+        Alamofire.request(url).responseJSON { [weak self] response in
+            let result = response.result
+            // Success.
+            if
+                result.isSuccess,
+                let value = result.value
+            {
+                self?.parseJSONItems(JSON(value))
+            }
+            // Failure.
+            else
+            {
+                self?.LOG("ERROR Could not get pills: '\(String(describing: result.error))'")
+            }
+        }
+    }
+
+    private func parseJSONItems(_ json: JSON)
+    {
+        let jsonItems = json["pills"]
+
+        var items = [Pill]()
+        for jsonItem in jsonItems
+        {
+            let ji = jsonItem.1
+            let item =
+                Pill(
+                    id: ji["id"].intValue,
+                    name: ji["name"].stringValue,
+                    imgURLString: ji["img"].stringValue,
+                    desc: ji["desription"].stringValue,
+                    dose: ji["dose"].stringValue
+                )
+            items.append(item)
+        }
+
+        self.items = items
     }
 
 }

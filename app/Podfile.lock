@@ -4,18 +4,21 @@ PODS:
     - Alamofire (~> 4.9)
   - Anchorage (4.3.1)
   - FSPagerView (0.8.3)
+  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
   - AlamofireImage (~> 3.6.0)
   - Anchorage (~> 4.3.1)
   - FSPagerView (~> 0.8.0)
+  - SwiftyJSON (~> 5.0.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
     - FSPagerView
+    - SwiftyJSON
   trunk:
     - Anchorage
 
@@ -24,7 +27,8 @@ SPEC CHECKSUMS:
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   Anchorage: a187da0bc9b07440637d42c8744b8c82a4490295
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1c751ef3b7273e3ea114f155595a1d8a2cf510d2
+PODFILE CHECKSUM: 1d5a455ce8c026acf88a8a459bc03b97c8c868ff
 
 COCOAPODS: 1.8.4
