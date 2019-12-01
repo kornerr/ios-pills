@@ -1,4 +1,5 @@
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
 
 class PillsController
@@ -11,6 +12,11 @@ class PillsController
     {
         // TODO: self.items = []
         self.loadItems()
+
+        // Download images when items change.
+        self.itemsChanged.subscribe { [weak self] in
+            self?.downloadImages()
+        }
     }
 
     private func LOG(_ message: String)
@@ -78,4 +84,34 @@ class PillsController
         self.items = items
     }
 
+    // MARK: - IMAGES
+
+    private(set) var images = [Int : UIImage]()
+    {
+        didSet
+        {
+            self.imagesChanged.report()
+        }
+    }
+    let imagesChanged = Reporter()
+
+    private func downloadImages()
+    {
+        self.images = [ : ]
+
+        for (id, pill) in self.items.enumerated()
+        {
+            guard let url = URL(string: pill.imgURLString) else { continue }
+            Alamofire.request(url).responseImage { response in
+                // Make sure image exists.
+                guard let image = response.result.value else { return }
+    
+                DispatchQueue.main.async { [weak self] in
+                    self?.LOG("downloadImages finished for id: '\(id)'")
+                    self?.images[id] = image
+                    self?.imagesChanged.report()
+                }
+            }
+        }
+    }
 }
