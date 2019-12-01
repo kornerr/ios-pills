@@ -11,6 +11,7 @@ class PillsController
     func refresh()
     {
         // TODO: self.items = []
+        // TODO: self.images = [:]
         self.loadItems()
 
         // Download images when items change.

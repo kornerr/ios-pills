@@ -37,12 +37,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         self.pillsVC = PillsVC()
 
         self.pillsController = PillsController()
+
+        // Sync items.
         self.pillsController.itemsChanged.subscribe { [weak self] in
             guard let items = self?.pillsController.items else { return }
             self?.LOG("Pills: '\(items)'")
             self?.pillsVC.items = items
         }
 
+        // Sync images.
+        self.pillsController.imagesChanged.subscribe { [weak self] in
+            guard let images = self?.pillsController.images else { return }
+            self?.pillsVC.images = images
+        }
+
+        // Initial request.
         self.pillsController.refresh()
     }
 

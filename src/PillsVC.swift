@@ -13,6 +13,7 @@ class PillsVC: UIViewController
     {
         super.viewDidLoad()
         self.setupPagerView()
+        self.setupImages()
         /*
         // Selection.
         self.tableView.delegate = self
@@ -81,8 +82,8 @@ class PillsVC: UIViewController
     private func layoutPagerViewItems()
     {
         let size = self.pagerView.frame.size
-        let height = size.height
-        let width = size.width / 1.5
+        let height = size.height / 1.2
+        let width = size.width / 1.7
         self.pagerView.itemSize = CGSize(width: width, height: height)
     }
     
@@ -113,15 +114,45 @@ class PillsVC: UIViewController
                 at: index
             )
             as! Cell
-        cell.backgroundColor = .gray
-        /*
-        cell.itemView.image = self.images[index] ?? self.placeholderImage
-        cell.itemView.contentMode = .scaleAspectFill
+        cell.backgroundColor = .white
+        cell.itemView.image = self.images[index]
+        cell.itemView.contentMode = .scaleAspectFit
         cell.itemView.clipsToBounds = true
         cell.contentView.layer.shadowRadius = 0
+        cell.contentView.layer.borderWidth = 0.5
+        cell.contentView.layer.borderColor = UIColor.lightGray.cgColor
+        cell.contentView.layer.cornerRadius = 5
         self.dequeued[cell.itemView] = index
-        */
         return cell
+    }
+
+    // MARK: - IMAGES
+
+    var images = [Int : UIImage]()
+    {
+        didSet
+        {
+            self.imagesChanged.report()
+        }
+    }
+    let imagesChanged = Reporter()
+
+    private func setupImages()
+    {
+        self.imagesChanged.subscribe { [weak self] in
+            self?.applyImages()
+        }
+    }
+
+    private func applyImages()
+    {
+        for (itemView, id) in self.dequeued
+        {
+            if let image = self.images[id]
+            {
+                itemView.image = image
+            }
+        }
     }
 
     /*
