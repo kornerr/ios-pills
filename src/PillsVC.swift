@@ -19,13 +19,16 @@ class PillsVC: UIViewController
         self.setupSelection()
         self.setupDots()
         self.setupNameAndDescription()
-        //self.setupRefresh()
+        self.setupCycler()
 
         // Layout.
         self.lastView = startLastView(forVC: self)
         self.layoutPagerView()
         self.layoutDots()
         self.layoutNameAndDescription()
+
+        self.layoutCycler()
+        //finishLastView(self.cycleButton, forVC: self)
     }
 
     override func viewDidLayoutSubviews()
@@ -283,29 +286,45 @@ class PillsVC: UIViewController
 		}
     }
 
-    // MARK: - ADDITION
+    // MARK: - CYCLER
 
-    /*
-    let addItem = Reporter()
-    private var addButton: UIBarButtonItem!
+    let cycle = Reporter()
+    private var cycleButton: UIButton!
 
-    private func setupAddition()
+    private func setupCycler()
     {
-        self.addButton =
-            UIBarButtonItem(
-                barButtonSystemItem: .add,
-                target: self,
-                action: #selector(requestAddition)
+        self.cycleButton = UIButton()
+        self.view.addSubview(self.cycleButton)
+        self.cycleButton.backgroundColor = self.view.tintColor
+        let inset: CGFloat = 8
+        self.cycleButton.contentEdgeInsets =
+            UIEdgeInsets(
+                top: inset,
+                left: inset,
+                bottom: inset,
+                right: inset
             )
-        var items: [UIBarButtonItem] = self.navigationItem.rightBarButtonItems ?? []
-        items.append(self.addButton)
-        self.navigationItem.rightBarButtonItems = items
+
+        self.cycleButton.setTitle(
+            NSLocalizedString("Pills.Cycle.Title", comment: ""),
+            for: .normal
+        )
+        self.cycleButton.addTarget(
+            self,
+            action: #selector(reportCycle),
+            for: .touchUpInside
+        )
     }
 
-    @objc func requestAddition(_ sender: Any)
+    private func layoutCycler()
     {
-        self.addItem.report()
+        self.cycleButton.topAnchor == self.lastView.bottomAnchor + 8
+        self.cycleButton.rightAnchor == self.view.rightAnchor - 16
     }
-    */
+
+    @objc func reportCycle(_ sender: Any)
+    {
+        self.cycle.report()
+    }
 
 }
