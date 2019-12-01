@@ -1,13 +1,14 @@
 import UIKit
 
-class AppliancesVC: UIViewController
-    ,UITableViewDataSource
-    ,UITableViewDelegate
+class PillsVC: UIViewController
+    //,UITableViewDataSource
+    //,UITableViewDelegate
 {
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        /*
         self.setupTableView()
         self.tableView.register(Cell.self, forCellReuseIdentifier: self.CELL_ID)
 
@@ -15,16 +16,17 @@ class AppliancesVC: UIViewController
         self.tableView.delegate = self
         
         self.setupAddition()
+        */
     }
 
     private func LOG(_ message: String)
     {
-        NSLog("AppliancesVC \(message)")
+        NSLog("PillsVC \(message)")
     }
 
     // MARK: - ITEMS
 
-    var items = [Appliance]()
+    var items = [Pill]()
     {
         didSet
         {
@@ -33,6 +35,7 @@ class AppliancesVC: UIViewController
     }
     let itemsChanged = Reporter()
 
+    /*
     // MARK: - TABLE VIEW
 
     private var tableView: UITableView!
@@ -134,5 +137,6 @@ class AppliancesVC: UIViewController
     {
         self.addItem.report()
     }
+    */
 
 }

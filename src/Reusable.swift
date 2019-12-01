@@ -254,7 +254,7 @@ class UITableViewCellTemplate<ItemView: UIView>: UITableViewCell
     }
 }
 
-// MARK: - Flexible stacking of views
+// MARK: - (2019-12-01) Flexible stacking of views
 
 func startLastView(forVC vc: UIViewController) -> UIView
 {
