@@ -12,7 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     ) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
+        self.setupStore()
         self.setupPills()
+
         let nc = UINavigationController(rootViewController: self.pillsVC)
         nc.setNavigationBarHidden(true, animated: false)
         self.window?.rootViewController = nc
@@ -58,11 +60,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             self?.pillsVC.cycleItems()
         }
 
-        // Initial request.
+        // Request network data.
         self.pillsController.refresh()
 
-        let context = self.persistentContainer.viewContext
-        self.pillsCache = PillsCache(context: context)
+        // Setup cache once persistent store is loaded.
+        self.storeLoaded.subscribe {
+            self.setupPillsCache()
+        }
+    }
+
+    private func setupPillsCache()
+    {
+        self.pillsCache = PillsCache(context: self.store.viewContext)
+
         self.pillsCache.clear()
 
         let date = Date()
@@ -83,56 +93,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         self.pillsCache.printItems()
     }
 
-    // MARK: - CORE DATA STORE
+    // MARK: - STORE
 
-    func applicationWillTerminate(_ application: UIApplication)
+    var store: NSPersistentContainer!
+    let storeLoaded = Reporter()
+
+    private func setupStore()
     {
-        self.saveContext()
-    }
-
-    lazy var persistentContainer: NSPersistentContainer = {
-        /*
-         The persistent container for the application. This implementation
-         creates and returns a container, having loaded the store for the
-         application to it. This property is optional since there are legitimate
-         error conditions that could cause the creation of the store to fail.
-        */
-        let container = NSPersistentContainer(name: "abcv")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            print("store loaded")
-            if let error = error as NSError? {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
-
-    func saveContext()
-    {
-        let context = persistentContainer.viewContext
-        if context.hasChanges
-        {
-            do
+        self.store = NSPersistentContainer(name: "abcv")
+        self.store.loadPersistentStores { (desc, error) in
+            if let error = error 
             {
-                try context.save()
+                self.LOG("ERROR Could not load persistent store: '\(error)'")
             }
-            catch
+            else
             {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                self.storeLoaded.report()
             }
         }
     }
