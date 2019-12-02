@@ -14,6 +14,7 @@ class PillsVC: UIViewController
     {
         super.viewDidLoad()
 
+        self.setupRefresher()
         self.setupPagerView()
         self.setupImages()
         self.setupSelection()
@@ -21,12 +22,14 @@ class PillsVC: UIViewController
         self.setupNameAndDescription()
         self.setupCycler()
 
-        // Layout.
+        // Layout top to bottom.
         self.lastView = startLastView(forVC: self)
+        self.layoutRefresher()
         self.layoutPagerView()
         self.layoutDots()
         self.layoutNameAndDescription()
 
+        // Layout at the bottom.
         self.layoutCycler()
     }
 
@@ -348,6 +351,40 @@ class PillsVC: UIViewController
     @objc func reportCycle(_ sender: Any)
     {
         self.cycle.report()
+    }
+
+    // MARK: - REFRESHER
+
+    let refresh = Reporter()
+    private var refreshButton: UIButton!
+
+    private func setupRefresher()
+    {
+        self.refreshButton = UIButton()
+        self.view.addSubview(self.refreshButton)
+
+        let image = UIImage(named: "refresh.png")
+        self.refreshButton.setImage(image, for: .normal)
+
+        self.refreshButton.addTarget(
+            self,
+            action: #selector(reportRefresh),
+            for: .touchUpInside
+        )
+    }
+
+    private func layoutRefresher()
+    {
+        self.refreshButton.heightAnchor == 44
+        self.refreshButton.widthAnchor == self.refreshButton.heightAnchor
+        self.refreshButton.topAnchor == self.lastView.bottomAnchor + 8
+        self.refreshButton.rightAnchor == self.view.rightAnchor - 16
+        self.lastView = self.refreshButton
+    }
+
+    @objc func reportRefresh(_ sender: Any)
+    {
+        self.refresh.report()
     }
 
 }
