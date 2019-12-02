@@ -6,18 +6,19 @@ class PillsController
 {
     let API_URL = "https://cloud.fdoctor.ru/test_task/"
 
-    init() { }
-
-    func refresh()
+    init()
     {
-        // TODO: self.items = []
-        // TODO: self.images = [:]
-        self.loadItems()
-
         // Download images when items change.
         self.itemsChanged.subscribe { [weak self] in
             self?.downloadImages()
         }
+    }
+
+    func refresh()
+    {
+        // ? self.items = []
+        // ? self.images = [:]
+        self.loadItems()
     }
 
     private func LOG(_ message: String)
@@ -115,4 +116,5 @@ class PillsController
             }
         }
     }
+
 }

@@ -2,17 +2,25 @@ import CoreData
 
 class PillsCache
 {
+    let ENTITY_NAME = "PillItem"
+
     var context: NSManagedObjectContext
-    var entity: NSEntityDescription?
 
     init(context: NSManagedObjectContext)
     {
         self.context = context
-        self.entity =
-            NSEntityDescription.entity(
-                forEntityName: "PillItem",
-                in: context
-            )
+    }
+
+    var items: [Pill]
+    {
+        get
+        {
+            return self.loadItems()
+        }
+        set
+        {
+            self.saveItems(newValue)
+        }
     }
 
     private func LOG(_ message: String)
@@ -20,13 +28,17 @@ class PillsCache
         NSLog("PillsCache \(message)")
     }
 
-    func addItem(_ item: Pill)
+    private func addItem(_ item: Pill)
     {
         guard
-            let entity = self.entity
+            let entity =
+                NSEntityDescription.entity(
+                    forEntityName: self.ENTITY_NAME,
+                    in: context
+                )
         else
         {
-            LOG("ERROR Could not cache a pill because entity is invalid")
+            LOG("ERROR Could not add a pill to cache because entity is invalid")
             return
         }
 
@@ -39,30 +51,20 @@ class PillsCache
 	        obj.setValue(item.dose, forKeyPath: "dose")
     }
 
-    func printItems()
+    private func loadItems() -> [Pill]
     {
-        let request = NSFetchRequest<NSManagedObject>(entityName: "PillItem")
+        var items = [Pill]()
+
+        let request =
+            NSFetchRequest<NSManagedObject>(entityName: self.ENTITY_NAME)
         do
         {
-            let items = try self.context.fetch(request)
-            for item in items
+            let objs = try self.context.fetch(request)
+            for obj in objs
             {
-                if
-                    let id = item.value(forKeyPath: "id") as? Int,
-                    let name = item.value(forKeyPath: "name") as? String,
-                    let imgURLString = item.value(forKeyPath: "imgURLString") as? String,
-                    let desc = item.value(forKeyPath: "desc") as? String,
-                    let dose = item.value(forKeyPath: "dose") as? String
+                if let item = self.objToItem(obj)
                 {
-                    let pill =
-                        Pill(
-                            id: id,
-                            name: name,
-                            imgURLString: imgURLString,
-                            desc: desc,
-                            dose: dose
-                        )
-                    LOG("Item: '\(pill)'")
+                    items.append(item)
                 }
             }
         }
@@ -70,9 +72,34 @@ class PillsCache
         {
             LOG("ERROR Could not fetch items: '\(error)'")
         }
+
+        return items
     }
 
-    func save()
+    private func objToItem(_ obj: NSManagedObject) -> Pill?
+    {
+        guard
+            let id = obj.value(forKeyPath: "id") as? Int,
+            let name = obj.value(forKeyPath: "name") as? String,
+            let imgURLString = obj.value(forKeyPath: "imgURLString") as? String,
+            let desc = obj.value(forKeyPath: "desc") as? String,
+            let dose = obj.value(forKeyPath: "dose") as? String
+        else
+        {
+            return nil
+        }
+
+        return
+            Pill(
+                id: id,
+                name: name,
+                imgURLString: imgURLString,
+                desc: desc,
+                dose: dose
+            )
+    }
+
+    private func save()
     {
         do
         {
@@ -84,7 +111,7 @@ class PillsCache
         }
     }
 
-    func clear()
+    private func clear()
     {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PillItem")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
@@ -96,6 +123,16 @@ class PillsCache
         {
             LOG("ERROR Could not clear the cache: '\(error)'")
         }
+    }
+
+    private func saveItems(_ items: [Pill])
+    {
+        self.clear()
+        for item in items
+        {
+            self.addItem(item)
+        }
+        self.save()
     }
 
 }

@@ -12,8 +12,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     ) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
-        self.setupStore()
         self.setupPills()
+        self.setupStore()
+        // Setup cache once persistent store is loaded.
+        self.storeLoaded.subscribe {
+            self.setupPillsCache()
+        }
 
         let nc = UINavigationController(rootViewController: self.pillsVC)
         nc.setNavigationBarHidden(true, animated: false)
@@ -34,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     private var pillsVC: PillsVC!
     private var pillsController: PillsController!
-    private var pillsCache: PillsCache!
     
     private func setupPills()
     {
@@ -43,60 +46,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         self.pillsController = PillsController()
 
         // Sync items.
-        self.pillsController.itemsChanged.subscribe { [weak self] in
-            guard let items = self?.pillsController.items else { return }
-            self?.LOG("Pills: '\(items)'")
-            self?.pillsVC.items = items
+        self.pillsController.itemsChanged.subscribe {
+            self.pillsVC.items = self.pillsController.items
+            self.LOG("Pills: '\(self.pillsController.items)'")
         }
 
         // Sync images.
-        self.pillsController.imagesChanged.subscribe { [weak self] in
-            guard let images = self?.pillsController.images else { return }
-            self?.pillsVC.images = images
+        self.pillsController.imagesChanged.subscribe {
+            self.pillsVC.images = self.pillsController.images
         }
 
         // Cycle items forward.
-        self.pillsVC.cycle.subscribe { [weak self] in
-            self?.pillsVC.cycleItems()
+        self.pillsVC.cycle.subscribe {
+            self.pillsVC.cycleItems()
         }
 
         // Request network data.
         self.pillsController.refresh()
-
-        // Setup cache once persistent store is loaded.
-        self.storeLoaded.subscribe {
-            self.setupPillsCache()
-        }
     }
 
-    private func setupPillsCache()
-    {
-        self.pillsCache = PillsCache(context: self.store.viewContext)
-
-        self.pillsCache.clear()
-
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let sdate = formatter.string(from: date)
-
-        self.pillsCache.addItem(
-            Pill(
-                id: 100,
-                name: "Abc",
-                imgURLString: "http://ya.ru",
-                desc: sdate,
-                dose: "Dose"
-            )
-        )
-        self.pillsCache.save()
-        self.pillsCache.printItems()
-    }
-
-    // MARK: - STORE
+    // MARK: - CACHE
 
     var store: NSPersistentContainer!
     let storeLoaded = Reporter()
+    private var pillsCache: PillsCache!
 
     private func setupStore()
     {
@@ -110,6 +83,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             {
                 self.storeLoaded.report()
             }
+        }
+    }
+
+    private func setupPillsCache()
+    {
+        self.pillsCache = PillsCache(context: self.store.viewContext)
+        // Use cached items only if there are no loaded ones.
+        let items = self.pillsCache.items
+        if self.pillsController.items.isEmpty
+        {
+            self.pillsController.items = items
+        }
+
+        // Cache new items.
+        self.pillsController.itemsChanged.subscribe {
+            self.pillsCache.items = self.pillsController.items
         }
     }
 
