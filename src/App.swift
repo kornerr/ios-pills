@@ -61,6 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             self.pillsVC.cycleItems()
         }
 
+        // Refresh data when requested.
+        self.pillsVC.refresh.subscribe {
+            self.pillsController.refresh()
+        }
+
         // Request network data.
         self.pillsController.refresh()
     }
