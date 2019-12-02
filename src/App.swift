@@ -39,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         self.pillsVC = PillsVC()
 
         self.pillsController = PillsController()
-        self.pillsCache = PillsCache(persistentContainer: self.persistentContainer)
 
         // Sync items.
         self.pillsController.itemsChanged.subscribe { [weak self] in
@@ -61,9 +60,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         // Initial request.
         self.pillsController.refresh()
+
+        let context = self.persistentContainer.viewContext
+        self.pillsCache = PillsCache(context: context)
+        self.pillsCache.addItem(
+            Pill(
+                id: 100,
+                name: "Abc",
+                imgURLString: "http://ya.ru",
+                desc: "Desc",
+                dose: "Dose"
+            )
+        )
+        self.pillsCache.save()
+        self.pillsCache.printItems()
     }
 
-    // MARK: - TODO CORE DATA
+    // MARK: - CORE DATA STORE
 
     func applicationWillTerminate(_ application: UIApplication)
     {
@@ -79,6 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         */
         let container = NSPersistentContainer(name: "abcv")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            print("store loaded")
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
