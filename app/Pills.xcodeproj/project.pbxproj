@@ -8,39 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		11155F6F78F6AEDD88573DD3 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7314521F744BA1D0CA2310 /* Reusable.swift */; };
-		25C3DE2318E7295DA190E8A8 /* Pods_pills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B93F351019FB517C35203FE1 /* Pods_pills.framework */; };
 		2A32EEBB8DA27A6C421DD429 /* siri.png in Resources */ = {isa = PBXBuildFile; fileRef = 51817A611D9AF3038AC4814C /* siri.png */; };
 		35F8E5A185D98499D8293B78 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5822A34EFC9D407F0FF2D9C4 /* Localizable.strings */; };
 		3D433FC56660EB0287F4A06F /* PillsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09746895C46466D2AC003480 /* PillsController.swift */; };
 		5D64A9FD6AB0213D8401628B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C29B507E69DF2EFE68880FE /* Assets.xcassets */; };
+		65D78D8F64A4C19DD0D6BCC4 /* PillsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FD70EE866DBEDB81B11FA /* PillsCache.swift */; };
 		98F5D127340F148B3F341928 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96976953E6031A9CB14A2E1E /* Pill.swift */; };
+		BD245A3508B74351474A0E0A /* Pods_pills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3EE9E5E969B833248D4A43 /* Pods_pills.framework */; };
 		D21101A9E544DF7796B7D6BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 681051E26884D4ED9925EB90 /* LaunchScreen.storyboard */; };
 		D5C4A148E5700EAAB249DEDA /* PillsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC898FE6EC5B5F72E3AF569 /* PillsVC.swift */; };
 		DD6FB7D9DC69F0750ED16116 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17AC882CC5D9049A0ED026D /* App.swift */; };
+		FAFE625D996069A54116726D /* abcv.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E3916EE5F28334DA69E6C /* abcv.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		09746895C46466D2AC003480 /* PillsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsController.swift; sourceTree = "<group>"; };
-		09D541AF433499B4F928737E /* Pods-pills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pills.debug.xcconfig"; path = "Target Support Files/Pods-pills/Pods-pills.debug.xcconfig"; sourceTree = "<group>"; };
+		0A6F4909E14F4AE045C893FE /* Pods-pills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pills.debug.xcconfig"; path = "Target Support Files/Pods-pills/Pods-pills.debug.xcconfig"; sourceTree = "<group>"; };
+		2BF46286F1353D58EFC3FEBF /* abcv.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = abcv.xcdatamodel; sourceTree = "<group>"; };
 		2C7314521F744BA1D0CA2310 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		3403690EC27AE5ECF66FA864 /* pills.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = pills.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51817A611D9AF3038AC4814C /* siri.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = siri.png; sourceTree = "<group>"; };
 		5822A34EFC9D407F0FF2D9C4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		638FD70EE866DBEDB81B11FA /* PillsCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsCache.swift; sourceTree = "<group>"; };
 		681051E26884D4ED9925EB90 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6B3F6B74B71D19C80F7FEFEC /* Pods-pills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pills.release.xcconfig"; path = "Target Support Files/Pods-pills/Pods-pills.release.xcconfig"; sourceTree = "<group>"; };
 		7DC898FE6EC5B5F72E3AF569 /* PillsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillsVC.swift; sourceTree = "<group>"; };
+		8C3EE9E5E969B833248D4A43 /* Pods_pills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96976953E6031A9CB14A2E1E /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 		9C29B507E69DF2EFE68880FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B93F351019FB517C35203FE1 /* Pods_pills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17AC882CC5D9049A0ED026D /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		FC39DEC8A08B6B3045AC2136 /* Pods-pills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pills.release.xcconfig"; path = "Target Support Files/Pods-pills/Pods-pills.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3157CA0F0C48B75295C4751D /* Frameworks */ = {
+		C968F891ABB7F8D12D3894FD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25C3DE2318E7295DA190E8A8 /* Pods_pills.framework in Frameworks */,
+				BD245A3508B74351474A0E0A /* Pods_pills.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +56,8 @@
 			children = (
 				7EA635AD6244AABCFF4399DA /* src */,
 				A57C0075D6CF5632FD15D262 /* Products */,
-				683EB78B6BA40F22EECF5289 /* Pods */,
-				595454D9DA97E412ED84047F /* Frameworks */,
+				FF4B3935E6502B379E3935F5 /* Pods */,
+				41E26E7AFD277CAAD5EF07ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,32 +69,24 @@
 			path = img;
 			sourceTree = "<group>";
 		};
-		595454D9DA97E412ED84047F /* Frameworks */ = {
+		41E26E7AFD277CAAD5EF07ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B93F351019FB517C35203FE1 /* Pods_pills.framework */,
+				8C3EE9E5E969B833248D4A43 /* Pods_pills.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		683EB78B6BA40F22EECF5289 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				09D541AF433499B4F928737E /* Pods-pills.debug.xcconfig */,
-				6B3F6B74B71D19C80F7FEFEC /* Pods-pills.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		7EA635AD6244AABCFF4399DA /* src */ = {
 			isa = PBXGroup;
 			children = (
+				5D6E3916EE5F28334DA69E6C /* abcv.xcdatamodeld */,
 				C17AC882CC5D9049A0ED026D /* App.swift */,
 				9C29B507E69DF2EFE68880FE /* Assets.xcassets */,
 				681051E26884D4ED9925EB90 /* LaunchScreen.storyboard */,
 				5822A34EFC9D407F0FF2D9C4 /* Localizable.strings */,
 				96976953E6031A9CB14A2E1E /* Pill.swift */,
+				638FD70EE866DBEDB81B11FA /* PillsCache.swift */,
 				09746895C46466D2AC003480 /* PillsController.swift */,
 				7DC898FE6EC5B5F72E3AF569 /* PillsVC.swift */,
 				2C7314521F744BA1D0CA2310 /* Reusable.swift */,
@@ -108,6 +104,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		FF4B3935E6502B379E3935F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A6F4909E14F4AE045C893FE /* Pods-pills.debug.xcconfig */,
+				FC39DEC8A08B6B3045AC2136 /* Pods-pills.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,11 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E464EDA4016CE214F4993793 /* Build configuration list for PBXNativeTarget "pills" */;
 			buildPhases = (
-				AC46BC6338DAA6F81EBDFECC /* [CP] Check Pods Manifest.lock */,
+				FFA91BA0238A938C3ACEF1C2 /* [CP] Check Pods Manifest.lock */,
 				5793CAE29B394F71D6EEFA7A /* Sources */,
 				80C125034D836D934B6F6C94 /* Resources */,
-				3157CA0F0C48B75295C4751D /* Frameworks */,
-				443100192FA78E45D5AB91F7 /* [CP] Embed Pods Frameworks */,
+				C968F891ABB7F8D12D3894FD /* Frameworks */,
+				3EE420F2E7E3811FE7638186 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,7 +177,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		443100192FA78E45D5AB91F7 /* [CP] Embed Pods Frameworks */ = {
+		3EE420F2E7E3811FE7638186 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -188,7 +194,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pills/Pods-pills-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC46BC6338DAA6F81EBDFECC /* [CP] Check Pods Manifest.lock */ = {
+		FFA91BA0238A938C3ACEF1C2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -219,9 +225,11 @@
 			files = (
 				DD6FB7D9DC69F0750ED16116 /* App.swift in Sources */,
 				98F5D127340F148B3F341928 /* Pill.swift in Sources */,
+				65D78D8F64A4C19DD0D6BCC4 /* PillsCache.swift in Sources */,
 				3D433FC56660EB0287F4A06F /* PillsController.swift in Sources */,
 				D5C4A148E5700EAAB249DEDA /* PillsVC.swift in Sources */,
 				11155F6F78F6AEDD88573DD3 /* Reusable.swift in Sources */,
+				FAFE625D996069A54116726D /* abcv.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +348,7 @@
 		};
 		A7DAF44879ABB16D07764909 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B3F6B74B71D19C80F7FEFEC /* Pods-pills.release.xcconfig */;
+			baseConfigurationReference = FC39DEC8A08B6B3045AC2136 /* Pods-pills.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -358,7 +366,7 @@
 		};
 		AFBDB3AFCD797BB1C0D69A5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09D541AF433499B4F928737E /* Pods-pills.debug.xcconfig */;
+			baseConfigurationReference = 0A6F4909E14F4AE045C893FE /* Pods-pills.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -396,6 +404,19 @@
 			defaultConfigurationName = "";
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5D6E3916EE5F28334DA69E6C /* abcv.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2BF46286F1353D58EFC3FEBF /* abcv.xcdatamodel */,
+			);
+			currentVersion = 2BF46286F1353D58EFC3FEBF /* abcv.xcdatamodel */;
+			path = abcv.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 390F9007658880AE5FBB25B8 /* Project object */;
 }
