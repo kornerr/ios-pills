@@ -36,6 +36,7 @@ class PillsController
         }
     }
     let itemsChanged = Reporter()
+    let itemsFailed = Reporter()
 
     func loadItems()
     {
@@ -60,6 +61,7 @@ class PillsController
             else
             {
                 self?.LOG("ERROR Could not get pills: '\(String(describing: result.error))'")
+                self?.itemsFailed.report()
             }
         }
     }

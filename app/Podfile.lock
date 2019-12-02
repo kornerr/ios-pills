@@ -22,6 +22,7 @@ PODS:
   - CHIPageControl/Puya (0.2)
   - FSPagerView (0.8.3)
   - SwiftyJSON (5.0.0)
+  - TTGSnackbar (1.9.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.9.1)
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - CHIPageControl (~> 0.2)
   - FSPagerView (~> 0.8.0)
   - SwiftyJSON (~> 5.0.0)
+  - TTGSnackbar (~> 1.9.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -38,6 +40,7 @@ SPEC REPOS:
     - CHIPageControl
     - FSPagerView
     - SwiftyJSON
+    - TTGSnackbar
   trunk:
     - Anchorage
 
@@ -48,7 +51,8 @@ SPEC CHECKSUMS:
   CHIPageControl: a787bf7205c9b7e7fbfc412be36c5e8636b68f86
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  TTGSnackbar: 7408a90b9739d296b933804287dd3ef6dadf2725
 
-PODFILE CHECKSUM: 86252e240a78991db6a020021dfa37e47af86a64
+PODFILE CHECKSUM: f1cd7b73f2be8aecbe48ff2bfbf5a68e8f849ea1
 
 COCOAPODS: 1.8.4

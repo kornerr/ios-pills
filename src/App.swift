@@ -1,4 +1,5 @@
 import CoreData
+import TTGSnackbar
 import UIKit
 
 @UIApplicationMain
@@ -64,6 +65,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         // Refresh data when requested.
         self.pillsVC.refresh.subscribe {
             self.pillsController.refresh()
+        }
+        
+        // Display error if loading failed.
+        self.pillsController.itemsFailed.subscribe {
+            let msg = NSLocalizedString("Refresh.Failure", comment: "")
+            let snackbar = TTGSnackbar(message: msg, duration: .short)
+            snackbar.show()
         }
 
         // Request network data.

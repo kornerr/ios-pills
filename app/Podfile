@@ -10,4 +10,5 @@ target 'pills' do
     pod 'CHIPageControl', '~> 0.2'
     pod 'FSPagerView', '~> 0.8.0'
     pod 'SwiftyJSON', '~> 5.0.0'
+    pod 'TTGSnackbar', '~> 1.9.0'
 end
