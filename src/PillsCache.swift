@@ -57,6 +57,10 @@ class PillsCache
 
         let request =
             NSFetchRequest<NSManagedObject>(entityName: self.ENTITY_NAME)
+        // Sort by id.
+        let sort = NSSortDescriptor(key: #keyPath(PillItem.id), ascending: true)
+        request.sortDescriptors = [sort]
+
         do
         {
             let objs = try self.context.fetch(request)
