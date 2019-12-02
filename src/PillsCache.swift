@@ -84,4 +84,18 @@ class PillsCache
         }
     }
 
+    func clear()
+    {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PillItem")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+        do
+        {
+            try self.context.execute(deleteRequest)
+        }
+        catch
+        {
+            LOG("ERROR Could not clear the cache: '\(error)'")
+        }
+    }
+
 }

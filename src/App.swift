@@ -63,12 +63,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
         let context = self.persistentContainer.viewContext
         self.pillsCache = PillsCache(context: context)
+        self.pillsCache.clear()
+
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let sdate = formatter.string(from: date)
+
         self.pillsCache.addItem(
             Pill(
                 id: 100,
                 name: "Abc",
                 imgURLString: "http://ya.ru",
-                desc: "Desc",
+                desc: sdate,
                 dose: "Dose"
             )
         )
