@@ -287,26 +287,26 @@ class PillsVC: UIViewController
     
     private func updateNameAndDescription()
     {
-		let fadeOut = { [weak self] in
-        	self?.nameLabel.alpha = 0
-        	self?.descLabel.alpha = 0
-		}
-		let fadeIn = { [weak self] in
+        let fadeOut = { [weak self] in
+            self?.nameLabel.alpha = 0
+            self?.descLabel.alpha = 0
+        }
+        let fadeIn = { [weak self] in
             guard let this = self else { return }
             if this.selectedItemId < this.items.count
             {
-        	    this.nameLabel.text = this.items[this.selectedItemId].name
-        	    this.descLabel.text = this.items[this.selectedItemId].desc
+                this.nameLabel.text = this.items[this.selectedItemId].name
+                this.descLabel.text = this.items[this.selectedItemId].desc
             }
-        	self?.nameLabel.alpha = 1
-        	self?.descLabel.alpha = 1
-		}
-		
+            self?.nameLabel.alpha = 1
+            self?.descLabel.alpha = 1
+        }
+        
         // Animate.
-		let tm = 0.2
-		UIView.animate(withDuration: tm, animations: fadeOut) { (finished) in
-			UIView.animate(withDuration: tm, animations: fadeIn)
-		}
+        let tm = 0.2
+        UIView.animate(withDuration: tm, animations: fadeOut) { (finished) in
+            UIView.animate(withDuration: tm, animations: fadeIn)
+        }
     }
 
     // MARK: - CYCLER
