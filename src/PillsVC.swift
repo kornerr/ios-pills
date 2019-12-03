@@ -109,7 +109,14 @@ class PillsVC: UIViewController
 
     func cycleItems()
     {
+        // Make sure we have items.
+        if self.items.isEmpty
+        {
+            return
+        }
+
         var id = self.pagerView.currentIndex + 1
+        // Cycle id.
         if id >= self.items.count
         {
             id = 0
@@ -286,8 +293,11 @@ class PillsVC: UIViewController
 		}
 		let fadeIn = { [weak self] in
             guard let this = self else { return }
-        	this.nameLabel.text = this.items[this.selectedItemId].name
-        	this.descLabel.text = this.items[this.selectedItemId].desc
+            if this.selectedItemId < this.items.count
+            {
+        	    this.nameLabel.text = this.items[this.selectedItemId].name
+        	    this.descLabel.text = this.items[this.selectedItemId].desc
+            }
         	self?.nameLabel.alpha = 1
         	self?.descLabel.alpha = 1
 		}
